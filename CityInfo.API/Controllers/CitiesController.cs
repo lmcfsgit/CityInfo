@@ -14,14 +14,7 @@ namespace CityInfo.API.Controllers
 
         public IActionResult GetCities()
         {
-
             return Ok(CitiesDataStore.Current.Cities); 
-            //return new JsonResult(new List<object>()
-            //{
-            //    new { id=1, Name="New York"},
-            //    new { id=2, Name="Antwerp"}
-            //});
-    
         }
         
         [HttpGet("{id}")]
