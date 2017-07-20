@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace CityInfo.API
 {
@@ -15,15 +16,17 @@ namespace CityInfo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                    .AddJsonOptions(o => {
-                        if (o.SerializerSettings.ContractResolver != null)
-                        {
-                            var castResolver = o.SerializerSettings.ContractResolver
-                                    as DefaultContractResolver;
-                            castResolver.NamingStrategy = new CamelCaseNamingStrategy();
-                            // Redefine Json default Naming Strategy (null for non  camelCase strategy)
-                        }
-                    });
+                .AddMvcOptions(o => o.OutputFormatters.Add(
+                        new XmlDataContractSerializerOutputFormatter()));
+                    //.AddJsonOptions(o => {
+                    //    if (o.SerializerSettings.ContractResolver != null)
+                    //    {
+                    //        var castResolver = o.SerializerSettings.ContractResolver
+                    //                as DefaultContractResolver;
+                    //        castResolver.NamingStrategy = new CamelCaseNamingStrategy();
+                    //        // Redefine Json default Naming Strategy (null for non  camelCase strategy)
+                    //    }
+                    //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

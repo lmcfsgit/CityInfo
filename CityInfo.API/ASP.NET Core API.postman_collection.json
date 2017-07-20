@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ASP.NET Core API",
+		"_postman_id": "c8900f7f-6a66-3af2-6618-64cea80a4481",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Cities",
+			"request": {
+				"url": "http://localhost:51571/api/cities",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Points of interest",
+			"request": {
+				"url": "http://localhost:51571/api/cities/1/pointsofinterest",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Point of interest",
+			"request": {
+				"url": "http://localhost:51571/api/cities/1/pointofinterest/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET City",
+			"request": {
+				"url": "http://localhost:51571/api/cities/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST Point of Interest",
+			"request": {
+				"url": "http://localhost:51571/api/cities/1/pointsofinterest",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Père Lachaise\",\n\t\"description\": \"Famous cemetery where Jim Morrison and Oscar Wilde are buried.\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
